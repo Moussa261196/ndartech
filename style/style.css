@@ -1,0 +1,265 @@
+:root{
+  --ink:#0B1526;
+  --navy:#16305C;
+  --signal:#2E74B5;
+  --cyan:#00B4C6;
+  --sand:#F3EEE4;
+  --paper:#FFFFFF;
+  --line:rgba(11,21,38,.10);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.display-font{
+  font-family:'Space Grotesk',sans-serif;
+  letter-spacing:-0.01em;
+}
+.mono{
+  font-family:'IBM Plex Mono',monospace;
+}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.8rem;
+  color:var(--signal);
+  letter-spacing:.02em;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  margin-bottom:.9rem;
+}
+.eyebrow::before{content:"//";opacity:.55;}
+
+section{scroll-margin-top:76px;}
+
+/* ---------- NAVBAR ---------- */
+.navbar-ndar{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.navbar-ndar .navbar-brand{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+  color:var(--navy)!important;
+  font-size:1.15rem;
+}
+.navbar-ndar .navbar-brand img{
+  display:block;
+  width:auto;
+  height:58px;
+  object-fit:contain;
+}
+.navbar-ndar .navbar-brand span{color:var(--signal);}
+.navbar-ndar .nav-link{
+  color:var(--ink)!important;
+  font-weight:500;
+  font-size:.95rem;
+  margin:0 .5rem;
+}
+.navbar-ndar .nav-link:hover{color:var(--signal)!important;}
+.btn-signal{
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  font-weight:600;
+  padding:.55rem 1.3rem;
+  border-radius:8px;
+  transition:.2s;
+}
+.btn-signal:hover{background:var(--signal);color:#fff;}
+.btn-outline-ndar{
+  border:1.5px solid var(--navy);
+  color:var(--navy);
+  font-weight:600;
+  border-radius:8px;
+  padding:.55rem 1.3rem;
+  background:transparent;
+  transition:.2s;
+}
+.btn-outline-ndar:hover{background:var(--navy);color:#fff;}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(0,180,198,.14), transparent 60%),
+    linear-gradient(180deg,#fff 0%, #fff 100%);
+  padding:150px 0 90px;
+}
+.hero h1{
+  font-size:clamp(2.2rem, 4.2vw, 3.4rem);
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.12;
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--signal);
+  position:relative;
+}
+.hero p.lead{
+  color:#3c4657;
+  font-size:1.12rem;
+  max-width:520px;
+}
+
+/* Code editor mockup — signature element */
+.editor{
+  background:var(--ink);
+  border-radius:14px;
+  box-shadow:0 30px 60px -20px rgba(11,21,38,.35);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.06);
+}
+.editor-bar{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:12px 16px;
+  background:#0F1B33;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.editor-dot{width:10px;height:10px;border-radius:50%;}
+.editor-bar .fname{
+  margin-left:10px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.78rem;
+  color:#8593AC;
+}
+.editor-body{
+  padding:22px 24px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.86rem;
+  line-height:1.9;
+  min-height:230px;
+}
+.editor-body .ln{color:#4C5A76;user-select:none;display:inline-block;width:22px;}
+.tok-tag{color:#00B4C6;}
+.tok-attr{color:#7FB2E5;}
+.tok-str{color:#9EE6A0;}
+.tok-com{color:#5B6B8C;font-style:italic;}
+.tok-txt{color:#E7ECF5;}
+#typedCode{white-space:pre;color:#E7ECF5;}
+.caret{
+  display:inline-block;width:8px;height:1.1em;background:var(--cyan);
+  vertical-align:text-bottom;animation:blink 1s step-end infinite;
+}
+@keyframes blink{50%{opacity:0;}}
+
+/* ---------- SECTIONS GÉNÉRAL ---------- */
+.section-alt{background:var(--sand);}
+.section-title{
+  font-weight:700;
+  color:var(--navy);
+  font-size:clamp(1.6rem,2.6vw,2.1rem);
+}
+
+/* ---------- FORMATIONS ---------- */
+.card-formation{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:2rem 1.7rem;
+  background:#fff;
+  height:100%;
+  transition:.25s;
+}
+.card-formation:hover{
+  border-color:var(--signal);
+  box-shadow:0 20px 40px -24px rgba(22,48,92,.28);
+  transform:translateY(-3px);
+}
+.icon-badge{
+  width:48px;height:48px;
+  border-radius:10px;
+  background:var(--navy);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.25rem;
+  margin-bottom:1.2rem;
+}
+.card-formation .niveau{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.75rem;
+  color:var(--signal);
+  background:rgba(46,116,181,.08);
+  padding:.2rem .6rem;
+  border-radius:20px;
+  display:inline-block;
+}
+
+/* ---------- POURQUOI ---------- */
+.feature{
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+}
+.feature .num{
+  font-family:'IBM Plex Mono',monospace;
+  color:var(--cyan);
+  font-weight:600;
+  font-size:.85rem;
+  border:1px solid var(--line);
+  border-radius:8px;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+
+/* ---------- REALISATIONS ---------- */
+.browser-card{
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.browser-top{
+  background:#EDEAE2;
+  padding:9px 12px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.browser-top .d{width:8px;height:8px;border-radius:50%;background:#C9C3B6;}
+.browser-preview{
+  height:170px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;
+  font-size:1.4rem;
+  color:#fff;
+}
+
+/* ---------- CONTACT ---------- */
+.contact-info-item{
+  display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.4rem;
+}
+.contact-info-item i{color:var(--signal);font-size:1.1rem;margin-top:.15rem;}
+.form-control, .form-select{
+  border-radius:8px;
+  border:1.5px solid var(--line);
+  padding:.65rem .9rem;
+}
+.form-control:focus, .form-select:focus{
+  border-color:var(--signal);
+  box-shadow:0 0 0 3px rgba(46,116,181,.12);
+}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);color:#AEB8CC;}
+footer a{color:#D7DEEB;text-decoration:none;}
+footer a:hover{color:var(--cyan);}
+footer .brand{
+  font-family:'Space Grotesk',sans-serif;
+  color:#fff;font-weight:700;font-size:1.1rem;
+}
+
+@media(max-width:991px){
+  .hero{padding:130px 0 60px;text-align:center;}
+  .hero p.lead{margin-left:auto;margin-right:auto;}
+  .hero .editor{margin-top:3rem;}
+}
